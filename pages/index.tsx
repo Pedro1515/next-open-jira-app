@@ -18,7 +18,7 @@ export default function Home() {
             <Card sx={{ height: 'calc(100vh - 85px)' }}>
               <CardHeader title='Pendientes' />
               <CardContent>
-                <EntryList />
+                <EntryList  status="PEDING"/>
               </CardContent>
             </Card>
           </Grid>
@@ -27,7 +27,7 @@ export default function Home() {
             <Card sx={{ height: 'calc(100vh - 85px)' }}>
               <CardHeader title='En Progreso' />
               <CardContent>
-                <EntryList />
+                <EntryList status="IN_PROGRESS"/>
               </CardContent>
             </Card>
           </Grid>
@@ -36,7 +36,7 @@ export default function Home() {
             <Card sx={{ height: 'calc(100vh - 85px)' }}>
               <CardHeader title='Completados' />
               <CardContent>
-                <EntryList />
+                <EntryList status="FINISHED"/>
               </CardContent>
             </Card>
           </Grid>

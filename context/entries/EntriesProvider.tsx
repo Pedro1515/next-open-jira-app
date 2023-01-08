@@ -15,19 +15,19 @@ const INITIAL_STATE: EntriesStateProps = {
         {
             _id: uuidv4(),
             createdAt: Date.now(),
-            description: 'Id voluptate consectetur occaecat excepteur nisi cupidatat sint exercitation nisi.',
+            description: 'Pendiente: Id voluptate consectetur occaecat excepteur nisi cupidatat sint exercitation nisi.',
             status: 'PEDING',
         },
         {
             _id: uuidv4(),
             createdAt: Date.now() - 1543234,
-            description: 'Consectetur consectetur labore minim magna minim consectetur sit do est occaecat.',
+            description: 'En-progreso: Consectetur consectetur labore minim magna minim consectetur sit do est occaecat.',
             status: 'IN_PROGRESS',
         },
         {
             _id: uuidv4(),
             createdAt: Date.now() - 862565,
-            description: 'Ullamco dolore est minim commodo laboris ullamco Lorem.',
+            description: 'Terminadas Ullamco dolore est minim commodo laboris ullamco Lorem.',
             status: 'FINISHED',
         }
     ],
@@ -37,7 +37,7 @@ export const EntriesProvider: FC<PropsWithChildren> = ({ children }) => {
     const [state, dispatch] = useReducer(entriesReducer, INITIAL_STATE as any)
 
     return (
-        <EntriesContext.Provider value={{ entries: [] }}>
+        <EntriesContext.Provider value={{ ...state }}>
             {children}
         </EntriesContext.Provider>
     )
