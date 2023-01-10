@@ -3,8 +3,9 @@ import { Entry } from '../../interfaces';
 
 interface EntriesContextProps {
     entries: Entry[];
+    createEntry: (description: string) => void;
+    deleteEntry: (entry: Entry) => void;
+    updateEntry: (entry: Entry) => void;
 }
 
-export const EntriesContext = createContext<EntriesContextProps>({
-    entries: [],
-})
+export const EntriesContext = createContext<EntriesContextProps>({} as EntriesContextProps)
