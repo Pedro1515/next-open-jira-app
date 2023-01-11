@@ -5,6 +5,7 @@ type EntriesActionTypes =
     |{ type: '[Entries] - Add-Entry'; payload: Entry; }
     |{ type: '[Entries] - Delete-Entry'; payload: Entry; }
     |{ type: '[Entries] - Update-Entry'; payload: Entry; }
+    |{ type: '[Entries] - Set-Entries'; payload: Entry[]; }
 
 export const entriesReducer = ( state: EntriesStateProps, action: EntriesActionTypes ): EntriesStateProps => {
 
@@ -28,6 +29,12 @@ export const entriesReducer = ( state: EntriesStateProps, action: EntriesActionT
                     entry._id === action.payload._id ? action.payload : entry
                 ),
             };
+        
+        case '[Entries] - Set-Entries':
+            return {
+                ...state,
+                entries: action.payload
+            }
         
         default:
             return state;
