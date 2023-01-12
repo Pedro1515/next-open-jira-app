@@ -19,7 +19,7 @@ export default function Home() {
               <CardHeader title='Pendientes' />
               <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'auto' }} >
                 <NewEntry />
-                <EntryList  status="PEDING"/>
+                <EntryList  status="PENDING"/>
               </CardContent>
             </Card>
           </Grid>

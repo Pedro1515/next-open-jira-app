@@ -8,9 +8,9 @@ const EntrySchema = new Schema({
     createdAt: { type: Number, default: Date.now() },
     status: { 
         type: String,
-        default: 'PEDING',
-        enum: ['PEDING', 'IN_PROGRESS', 'FINISHED'], 
-        message: 'Status must be PEDING, IN_PROGRESS or FINISHED',
+        default: 'PENDING',
+        enum: ['PENDING', 'IN_PROGRESS', 'FINISHED'], 
+        message: 'Status must be PENDING, IN_PROGRESS or FINISHED',
     },
 });
 

@@ -15,7 +15,7 @@ export default function handle(req: NextApiRequest, res: NextApiResponse<Data>) 
 
         case 'POST':
             return postEntries(req, res)
-    
+
         default:
             return res.status(400).json({ message: 'Endpoint not implemented'})
     }

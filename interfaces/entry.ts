@@ -5,4 +5,4 @@ export interface Entry {
     status: EntryStatus;
 }
 
-export type EntryStatus = 'PEDING' | 'IN_PROGRESS' | 'FINISHED';
+export type EntryStatus = 'PENDING' | 'IN_PROGRESS' | 'FINISHED';

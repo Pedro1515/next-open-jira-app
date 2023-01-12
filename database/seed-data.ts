@@ -11,9 +11,9 @@ interface SeedEntry {
 export const seedData: SeedData = {
     entries: [
         {
-            description: 'Entry in PEDING status',
+            description: 'Entry in PENDING status',
             createdAt: new Date().getTime(),
-            status: 'PEDING',
+            status: 'PENDING',
         },
         {
             description: 'Entry in IN_PROGRESS status',
