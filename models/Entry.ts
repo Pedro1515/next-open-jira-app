@@ -5,9 +5,10 @@ export interface IEntryModel extends Entry {}
 
 const EntrySchema = new Schema({
     description: { type: String, required: true },
-    createdAt: { type: Number, required: true },
+    createdAt: { type: Number, default: Date.now() },
     status: { 
         type: String,
+        default: 'PEDING',
         enum: ['PEDING', 'IN_PROGRESS', 'FINISHED'], 
         message: 'Status must be PEDING, IN_PROGRESS or FINISHED',
     },
