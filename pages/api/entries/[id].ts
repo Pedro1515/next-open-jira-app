@@ -13,10 +13,6 @@ export default function handle(req: NextApiRequest, res: NextApiResponse<Data>) 
 
     const { id } = req.query;
 
-    if ( !mongoose.isValidObjectId(id) ) {
-        return res.status(400).json({ message: 'Invalid id' })
-    }
-    
     switch (req.method) {
         case 'GET':
             return getEntry(id as string, res)
@@ -79,8 +75,6 @@ const deleteEntry = async (id: string, res: NextApiResponse<Data>) => {
         if (!entry) return res.status(404).json({message: "Entry not found"})
         await db.disconnect()
 
-        console.log(entry);
-        
         return res.status(200).json(entry as any)
         
     } catch (error) {
