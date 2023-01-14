@@ -16,10 +16,12 @@ mongodb://localhost:27017/entriesdb
 ### Configure Environments
 Rename __.env.example__ to __.env__ and set the environment variables.
 
-### Running App
+### Intalling Node Modules And Running App
 ```bash
+npm install
 npm run dev
 # or
+yarn install
 yarn dev
 ```
 

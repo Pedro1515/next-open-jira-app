@@ -1,10 +1,10 @@
 import { Box } from "@mui/material"
 import Head from "next/head"
+import { PropsWithChildren } from "react";
 import { Navbar, Sidebar } from "../ui";
 
-interface Props {
+interface Props extends PropsWithChildren<any> {
     title?: string
-    children?: JSX.Element;
 }
 
 export const Layout = ({ title = 'Open Jira', children }: Props) => {

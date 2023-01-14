@@ -4,6 +4,7 @@ import { useContext } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 
 import { UIContext } from '../../context/ui';
+import Link from 'next/link';
 
 interface Props {}
 
@@ -19,9 +20,11 @@ export const Navbar = ({}: Props) => {
                 >
                     <MenuIcon />
                 </IconButton>
-                <Typography variant="h6">
-                    Open Jira
-                </Typography>
+                <Link href='/'>
+                    <Typography variant="h6">
+                        Open Jira
+                    </Typography>
+                </Link>
             </Toolbar>
         </AppBar>
     )

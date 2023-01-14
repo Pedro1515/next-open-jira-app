@@ -72,6 +72,7 @@ export const NewEntry = ({}: Props) => {
                             color="secondary"
                             endIcon={<SaveOutlined />}
                             onClick={ onSave }
+                            disabled={ error }
                         >
                             Guardar
                         </Button>

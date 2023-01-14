@@ -45,6 +45,8 @@ export const EntriesProvider: FC<PropsWithChildren> = ({ children }) => {
             type: '[Entries] - Update-Entry',
             payload: data
         })
+
+        return data;
     }
 
     const refreshEntries = async () => {

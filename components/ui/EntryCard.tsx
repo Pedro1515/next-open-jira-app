@@ -3,20 +3,20 @@ import { Entry } from '../../interfaces';
 import { useRelativeTime } from '../../utils/hooks/useRelativeTime';
 import { UIContext } from '../../context/ui/UIContext';
 import { useContext } from 'react';
+import { useRouter } from 'next/router';
 
 interface Props {
     entry: Entry;
 }
 
 export const EntryCard = ({ entry }: Props) => {
-    const { description, createdAt } = entry;
+    const { description, createdAt, _id } = entry;
     const { startDraggingEntry } = useContext( UIContext )
-
+    const { push } = useRouter()
     const relativeTime = useRelativeTime(createdAt)
 
-    //drag and drop
     const onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
-        e.dataTransfer.setData('text', `${entry._id}`);
+        e.dataTransfer.setData('text', `${_id}`);
         startDraggingEntry()
         //TODO: modificar el estado para indicar que se está arrastrando una entrada
     }
@@ -30,6 +30,7 @@ export const EntryCard = ({ entry }: Props) => {
             draggable
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
+            onClick={() => push(`/entry/${_id}`)}
         >
             <CardActionArea>
                 <CardContent>

@@ -18,16 +18,33 @@ export const useRelativeTime = (date: number) => {
         const months = Math.floor(days / 30);
         const years = Math.floor(months / 12);
 
-        if (years > 0) {
-            return {count: years, unit: 'año'}   
-        } else if (months > 0) {
+        if (years > 1) {
+            return {count: years, unit: 'años'}   
+        } else if (years === 1) {
+            return {count: years, unit: 'año'}
+            
+        } else if (months > 1) {
+            return {count: months, unit: 'meses'}
+        } else if (months === 1) {
             return {count: months, unit: 'mes'}
-        } else if (days > 0) {
+
+        } else if (days > 1) {
+            return {count: days, unit: 'días'}
+        } else if (days === 1) {
             return {count: days, unit: 'día'}
-        } else if (hours > 0) {
+
+        } else if (hours > 1) {
+            return {count: hours, unit: 'horas'}
+        } else if (hours === 1) {
             return {count: hours, unit: 'hora'}
-        } else if (minutes > 0) {
+
+        } else if (minutes > 1) {
+            return {count: minutes, unit: 'minutos'}
+        } else if (minutes === 1) {
             return {count: minutes, unit: 'minuto'}
+            
+        } else if (seconds > 1 || seconds === 0) {
+            return {count: seconds, unit: 'segundos'}
         } else {
             return {count: seconds, unit: 'segundo'}
         }

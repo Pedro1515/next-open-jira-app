@@ -26,3 +26,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.hover-force-bgSuccess {
+  background-color: #2E7D32 !important;
+  cursor: not-allowed;
+}
+.hover-force-bgSuccess:hover {
+  background-color: #2E7D32 !important;
+}
