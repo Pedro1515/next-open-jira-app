@@ -7,6 +7,7 @@ import mongoose from "mongoose";
  * 3 = disconnecting
  */
 
+//TODO: upload environment to vercel and use it as process.env.MONGODB_URL
 const MONGODB_URL =
   "mongodb+srv://open_user:open_user_1234@clustertest.l6njp.mongodb.net/test";
 
